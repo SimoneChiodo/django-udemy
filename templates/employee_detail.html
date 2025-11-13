@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail - Django Template</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"></link>
+</head>
+<body>
+  <div class="container my-3">
+    <a href="{% url 'home' %}" class="btn btn-primary btn-lg px-4 my-4">Go back to HOME</a>
+
+    <section id="details" class="d-flex flex-column align-items-center">
+      <ul>
+        <li>
+          <h2>first_name:</h2> <p> {{ first_name }} </p>
+        </li>
+        <li>
+          <h2>last_name:</h2> <p> {{ last_name }} </p>
+        </li>
+        <li>
+          <h2>designation:</h2> <p> {{ designation }} </p>
+        </li>
+        <li>
+          <h2>email_address:</h2> <p> {{ email_address }} </p>
+        </li>
+        <li>
+          <h2>phone_number:</h2> <p> {{ phone_number }} </p>
+        </li>
+        <li>
+          <h2>created_at:</h2> <p> {{ created_at }} </p>
+        </li>
+        <li>
+          <h2>updated_at:</h2> <p> {{ updated_at }} </p>
+        </li>
+        <li>
+          <h2>photo:</h2> <img src="{{ photo.url }}" alt="photo">
+        </li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
