@@ -16,34 +16,39 @@
 </head>
 <body>
   <div class="container my-3">
-    <h1 class="mb-4">I'm the home!</h1>
+    <section id="name-and-image" class="d-flex flex-column align-items-center">
+      <h1 class="mb-4">I'm the home!</h1>
 
-    <img src="{% static 'images/linux.png' %}" alt="test-image">
+      <img src="{% static 'images/linux.png' %}" alt="test-image">
+    </section>
 
-    <a href="admin" class="btn btn-primary btn-lg px-4">Go to admin page</a>
+    <a href="admin" class="btn btn-primary btn-lg px-4 my-4">Go to admin page</a>
 
-    {{ employess }}
+    <!-- {{ employess }} -->
 
-    <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Full Name</th>
-        <th scope="col">Designation</th>
-        <th scope="col">Phone Number</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for employ in employess %}
-        <tr>
-          <th scope="row">{{ employ.id }}</th>
-          <td>{{ employ.first_name }} {{ employ.last_name }}</td>
-          <td>{{ employ.designation }}</td>
-          <td>{{ employ.phone_number }}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+    <section id="employee-list" class="d-flex flex-column align-items-center">
+      <h2>Employee List</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for employ in employess %}
+            <tr>
+              <th scope="row">{{ employ.id }}</th>
+              <td>{{ employ.first_name }} {{ employ.last_name }}</td>
+              <td>{{ employ.designation }}</td>
+              <td>{{ employ.phone_number }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
   </div>
 </body>
 </html>
